@@ -18,13 +18,13 @@ dp = Dispatcher()
 
 @dp.message(CommandStart())
 async def start_handler(message: Message):
-    await message.answer("Привет! Пришли мне C-код, а я верну тебе его ассемблерное представление.")
+    await message.answer("Пришли мне код на СИ, а я верну тебе его ассемблерное представление")
 
 @dp.message()
 async def code_handler(message: Message):
     code = message.text
     if not code:
-        await message.reply("Пожалуйста, отправь C-код.")
+        await message.reply("Я понимаю только Cи код")
         return
 
     with tempfile.TemporaryDirectory() as tmpdir:
